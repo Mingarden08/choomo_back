@@ -35,4 +35,9 @@ public class AuthController {
         }
 
     }
+    @PostMapping("/logout")
+    public ResponseEntity<DataResponse<Void>> logout() {
+
+        return ResponseEntity.ok(DataResponse.of(ResponseCode.SUCCESS, null));
+    }
 }

@@ -35,6 +35,15 @@ public class Member extends BaseEntity {
     @Schema(description = "비빌번호")
     private String passwd;
 
+    @Column(name = "gender", length = 10, nullable = false)
+    @Schema(description = "성별")
+    private String gender;
+
+    @Column(name = "age", length = 10, nullable = false)
+    @Schema(description = "나이")
+    private int age;
+
+
 
     public Member() {
 

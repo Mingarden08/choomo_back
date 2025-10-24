@@ -2,6 +2,7 @@ package com.mithon.choomo.api.dto.req;
 
 import com.mithon.choomo.api.entity.Member;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
@@ -32,12 +33,23 @@ public class MemberSignupRequestDto {
     )
     private String passwd;
 
+    @NotBlank(message = "성별은 필수 입력 값입니다.")
+    private String gender;
+
+    @NotNull(message = "나이는 필수 입력 값입니다.")
+    private Integer age;
+
+
+
+
 
     public Member toEntity() {
         return Member.builder()
                 .name(this.name)
                 .email(this.email)
                 .passwd(this.passwd)
+                .gender(this.gender)
+                .age(this.age)
                 .build();
     }
 }
