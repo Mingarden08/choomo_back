@@ -14,12 +14,6 @@ java {
 	}
 }
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
-
 repositories {
 	mavenCentral()
 }
@@ -72,8 +66,13 @@ dependencies {
 	// 아닐 경우 시간 절약을 위해 삭제 가능
 	// implementation 'org.apache.tika:tika-core:1.13'
 }
+
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.boot:spring-boot-dependencies:3.5.7"
 	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
 }

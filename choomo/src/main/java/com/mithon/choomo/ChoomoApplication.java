@@ -10,7 +10,7 @@ public class ChoomoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ChoomoApplication.class, args);
-		log.info("\n\n======================================== ChoomoApplication started ========================================\n\n");
+		log.info("\n\n===================================== ChoomoApplication started =====================================\n\n");
 	}
 
 }
